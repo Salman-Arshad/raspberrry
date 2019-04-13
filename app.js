@@ -3,7 +3,7 @@ const bodyparse = require('body-parser');
 app.use(bodyparse.json());
 app.use(bodyparse.urlencoded({extended: true}));
 var mysql = require('mysql');
-app.listen(5000,(error)=>{
+app.listen(5000,function(error){
     if(error){
         console.log(error);
     }else{
