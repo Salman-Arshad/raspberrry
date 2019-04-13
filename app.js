@@ -40,9 +40,9 @@ conn.connect(function(err) {
 });
 app.post('/', function(req, res) {
     console.log(typeof(req.body.data))
-    conn.query("INSERT INTO readings (id, data) VALUES (NULL,'"+req.body.data+"');",(err,resu)=>{
+    conn.query("INSERT INTO readings (id, data) VALUES (NULL,'"+req.body.data+"');",function(err,resu){
         if(err)console.log(error);
-        
+
 
     })
 });
