@@ -33,5 +33,5 @@ conn.connect(function(err) {
   console.log('connected to zybase');
 });
 app.post('/', function(req, res) {
-    conn.query("INSERT INTO `readings` (`id`, `data`) VALUES (NULL,",req.body.data,");")
+    conn.query("INSERT INTO 'readings' ('id', 'data') VALUES (NULL,'",req.body.data,"');")
 });
