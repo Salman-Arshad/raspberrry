@@ -19,18 +19,18 @@ app.get('/', function(req, res) {
     res.send(data);
   });
 });
-// var conn = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'ItIbjek4',
-//   database: 'decibelreadings',
-// });
 var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'tester',
-  });
+  host: 'localhost',
+  user: 'root',
+  password: 'ItIbjek4',
+  database: 'decibelreadings',
+});
+// var conn = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'tester',
+//   });
 conn.connect(function(err) {
   if (err) {
     console.log(err);
