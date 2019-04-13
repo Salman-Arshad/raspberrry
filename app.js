@@ -19,12 +19,18 @@ app.get('/', function(req, res) {
     res.send(data);
   });
 });
+// var conn = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'ItIbjek4',
+//   database: 'decibelreadings',
+// });
 var conn = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'ItIbjek4',
-  database: 'decibelreadings',
-});
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'tester',
+  });
 conn.connect(function(err) {
   if (err) {
     console.log(err);
@@ -33,5 +39,10 @@ conn.connect(function(err) {
   console.log('connected to zybase');
 });
 app.post('/', function(req, res) {
-    conn.query("INSERT INTO 'readings' ('id', 'data') VALUES (NULL,'",req.body.data,"');")
+    console.log(typeof(req.body.data))
+    conn.query("INSERT INTO readings (id, data) VALUES (NULL,'"+req.body.data+"');",(err,resu)=>{
+        if(err)console.log(error);
+        
+
+    })
 });
