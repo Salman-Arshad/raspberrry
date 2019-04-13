@@ -11,7 +11,7 @@ app.listen(5000,function(error){
     }
     
 });
-app.get("/",(req,res)=>{
+app.get("/",function(req,res){
     var data=[]
     conn.query("select * from readings",function(err,resu){
         resu.forEach(function(element) {
@@ -33,7 +33,7 @@ var conn = mysql.createConnection({
     }
     console.log('connected to zybase');
   });
-app.post("/",(req,res)=>{
+app.post("/",function(req,res){
     res.send(req.body.data);
     console.log(req.body)
 })
