@@ -13,8 +13,8 @@ app.listen(5000,(error)=>{
 });
 app.get("/",(req,res)=>{
     var data=[]
-    conn.query("select * from readings",(err,resu)=>{
-        resu.forEach(element => {
+    conn.query("select * from readings",function(err,resu){
+        resu.forEach(function(element) {
             data.push(element.data)
         });
         res.send(data)
@@ -26,7 +26,7 @@ var conn = mysql.createConnection({
     password: '',
     database: 'tester',
   });
-  conn.connect(err => {
+  conn.connect(function(err) {
     if (err) {
       console.log(err);
       return;
